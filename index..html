@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chadaporn Nantasai - Academic Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            pink: '#FCE7F3',    /* Pastel Pink */
+                            pinkDark: '#EC4899',
+                            yellow: '#FEF08A',  /* Pastel Yellow */
+                            yellowDark: '#EAB308',
+                            blue: '#E0F2FE',    /* Pastel Blue */
+                            blueDark: '#0284C7',
+                            dark: '#0F172A',    /* Dark Slate */
+                            muted: '#64748B',
+                            lightBg: '#FAFAFA'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Prompt', 'sans-serif'],
+                        body: ['Sarabun', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: #FAFAFA;
+            color: #1E293B;
+        }
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Prompt', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #EC4899 0%, #0284C7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #FCE7F3 0%, #E0F2FE 50%, #FEF08A 100%);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-pink selection:text-brand-pinkDark">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-card border-b border-slate-200/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#hero" class="flex items-center gap-2 group">
+                <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-pink-400 via-yellow-300 to-sky-400 flex items-center justify-center font-heading font-bold text-slate-800 text-base shadow-sm group-hover:scale-105 transition-transform">
+                    CN
+                </div>
+                <span class="font-heading font-semibold text-slate-800 text-lg">Chadaporn<span class="text-pink-500">.</span></span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center space-x-8 font-heading text-sm font-medium text-slate-600">
+                <a href="#about" class="hover:text-pink-500 transition-colors">ประวัติส่วนตัว</a>
+                <a href="#aspiration" class="hover:text-sky-500 transition-colors">ความใฝ่ฝัน</a>
+                <a href="#hobbies" class="hover:text-amber-500 transition-colors">ความสนใจ</a>
+                <a href="#portfolio" class="hover:text-pink-500 transition-colors">ผลงาน & กิจกรรม</a>
+                <a href="#contact" class="hover:text-sky-500 transition-colors">ติดต่อ</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <button onclick="openGithubModal()" class="px-3.5 py-1.5 text-xs font-heading font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-full transition-colors flex items-center gap-1.5">
+                    <i class="fa-brands fa-github text-sm"></i>
+                    <span>วิธีขึ้น GitHub Pages</span>
+                </button>
+                <a href="#contact" class="hidden sm:inline-flex px-4 py-2 text-xs font-heading font-medium text-white bg-slate-900 hover:bg-slate-800 rounded-full transition-all shadow-md hover:shadow-lg">
+                    ติดต่อฉัน
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden relative">
+        <div class="absolute top-10 right-10 w-72 h-72 bg-pink-200/40 rounded-full filter blur-3xl -z-10"></div>
+        <div class="absolute bottom-10 left-10 w-80 h-80 bg-sky-200/40 rounded-full filter blur-3xl -z-10"></div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Content -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pink-100/80 border border-pink-200 text-pink-700 text-xs font-heading font-medium">
+                        <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
+                        Academic Portfolio & Resume
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-heading font-bold text-slate-900 leading-tight">
+                        สวัสดีค่ะ, ฉันชื่อ <br class="hidden sm:inline"/>
+                        <span class="gradient-text">ชฎาพร นันทใส</span>
+                        <span class="text-2xl sm:text-3xl font-normal text-slate-600">(ปอย)</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-600 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        มุ่งมั่นพัฒนาความรู้ด้านการสาธารณสุขและการบริการสุขภาพชุมชน ด้วยเป้าหมายและความฝันที่จะก้าวสู่การเป็น 
+                        <strong class="font-semibold text-slate-800">"ผู้อำนวยการโรงพยาบาลส่งเสริมสุขภาพตำบล"</strong>
+                    </p>
+
+                    <!-- Quote/Motto Card -->
+                    <div class="p-4 rounded-2xl bg-white/70 border border-slate-200 shadow-sm max-w-lg mx-auto lg:mx-0 flex items-start gap-3 text-left">
+                        <div class="p-2 bg-amber-100 text-amber-600 rounded-xl">
+                            <i class="fa-solid fa-quote-left text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-heading text-slate-400 uppercase tracking-wider block">คติประจำใจ (Motto)</span>
+                            <p class="text-slate-800 font-medium text-sm sm:text-base italic">"ทำทุกอย่างให้ดีที่สุด"</p>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-3">
+                        <a href="#aspiration" class="px-6 py-3 rounded-full bg-slate-900 text-white font-heading font-medium text-sm hover:bg-slate-800 transition-all shadow-md hover:shadow-lg flex items-center gap-2">
+                            <span>ดูเป้าหมายอาชีพ</span>
+                            <i class="fa-solid fa-arrow-down text-xs"></i>
+                        </a>
+                        <a href="#contact" class="px-6 py-3 rounded-full bg-white text-slate-700 border border-slate-200 font-heading font-medium text-sm hover:bg-slate-50 transition-all">
+                            ช่องทางการติดต่อ
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Profile Avatar & Quick Info Card -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <!-- Colored Background Decor -->
+                        <div class="absolute inset-0 gradient-bg rounded-3xl rotate-3 scale-95 opacity-80 blur-sm"></div>
+                        
+                        <div class="relative bg-white/90 backdrop-blur-md border border-slate-200/80 p-6 sm:p-8 rounded-3xl shadow-xl space-y-6">
+                            <!-- Avatar Placeholder -->
+                            <div class="relative mx-auto w-36 h-36 sm:w-44 sm:h-44 rounded-full p-1.5 gradient-bg shadow-inner">
+                                <div class="w-full h-full rounded-full bg-slate-100 flex flex-col items-center justify-center text-slate-400 overflow-hidden relative group">
+                                    <i class="fa-solid fa-user-doctor text-5xl text-slate-300"></i>
+                                    <span class="text-xs font-heading mt-2 text-slate-400">ภาพรูปโปรไฟล์</span>
+                                </div>
+                                <div class="absolute bottom-1 right-1 bg-white p-2 rounded-full shadow-md text-pink-500">
+                                    <i class="fa-solid fa-heart text-base"></i>
+                                </div>
+                            </div>
+
+                            <div class="text-center space-y-1">
+                                <h2 class="text-xl font-heading font-bold text-slate-800">ชฎาพร นันทใส</h2>
+                                <p class="text-sm text-slate-500 font-heading">อายุ 19 ปี • เกิด 05 สิงหาคม 2550</p>
+                            </div>
+
+                            <!-- Color Palette Badges (User Favorite Colors) -->
+                            <div class="border-t border-slate-100 pt-4">
+                                <span class="text-xs text-slate-400 font-heading block text-center mb-2">โทนสีที่ชื่นชอบ (Favorite Colors)</span>
+                                <div class="flex items-center justify-center gap-2">
+                                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-100 text-pink-700 text-xs font-medium">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-pink-400"></span> ชมพู
+                                    </span>
+                                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-700 text-xs font-medium">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span> เหลือง
+                                    </span>
+                                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-100 text-sky-700 text-xs font-medium">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-sky-400"></span> ฟ้า
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 bg-white border-y border-slate-200/60">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-heading font-semibold uppercase tracking-wider text-pink-500">Personal Information</span>
+                <h2 class="text-2xl sm:text-3xl font-heading font-bold text-slate-800 mt-1">ข้อมูลส่วนตัวและประวัติ</h2>
+                <div class="w-12 h-1 bg-gradient-to-r from-pink-400 to-sky-400 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-2xl bg-pink-100 text-pink-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+                    <h3 class="text-lg font-heading font-semibold text-slate-800 mb-2">ข้อมูลทั่วไป</h3>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                            <span class="text-slate-400">ชื่อ-นามสกุล:</span>
+                            <span class="font-medium text-slate-700">ชฎาพร นันทใส</span>
+                        </li>
+                        <li class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                            <span class="text-slate-400">ชื่อเล่น:</span>
+                            <span class="font-medium text-slate-700">ปอย</span>
+                        </li>
+                        <li class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                            <span class="text-slate-400">วันเกิด:</span>
+                            <span class="font-medium text-slate-700">05/08/2007</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-slate-400">อายุ:</span>
+                            <span class="font-medium text-slate-700">19 ปี</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3 class="text-lg font-heading font-semibold text-slate-800 mb-2">หลักการดำเนินชีวิต</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                        ยึดมั่นในการพัฒนาตนเองอย่างต่อเนื่อง ใส่ใจในรายละเอียด และทุ่มเทเต็มความสามารถในทุกบทบาทหน้าที่
+                    </p>
+                    <div class="p-3 bg-amber-50 rounded-xl border border-amber-200/60 text-xs text-amber-800 font-medium">
+                        <i class="fa-solid fa-star text-amber-500 mr-1"></i> คติ: "ทำทุกอย่างให้ดีที่สุด"
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-icons"></i>
+                    </div>
+                    <h3 class="text-lg font-heading font-semibold text-slate-800 mb-2">สไตล์ & กิจกรรม</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-3">
+                        ผ่อนคลายและเติมพลังบวกด้วยเสียงเพลงและการรับชมภาพยนตร์ พร้อมความชอบในโทนสีพาสเทลที่ให้ความรู้สึกสดใสและผ่อนคลาย
+                    </p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="text-xs px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-600">🎬 ดูหนัง</span>
+                        <span class="text-xs px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-600">🎧 ฟังเพลง</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="aspiration" class="py-20 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden">
+                <!-- Background decorative elements -->
+                <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-sky-500/10 rounded-full blur-3xl"></div>
+                <div class="absolute -left-10 -top-10 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 space-y-5">
+                        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 text-xs font-heading">
+                            <i class="fa-solid fa-hospital text-sm"></i> Career Goal & Passion
+                        </span>
+                        
+                        <h2 class="text-2xl sm:text-4xl font-heading font-bold text-white leading-tight">
+                            ความใฝ่ฝันในสายอาชีพ <br/>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-pink-300 to-amber-200">
+                                ผู้อำนวยการโรงพยาบาลส่งเสริมสุขภาพตำบล
+                            </span>
+                        </h2>
+
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
+                            มุ่งเป้าหมายสู่การยกระดับคุณภาพชีวิตและระบบสาธารณสุขในระดับชุมชน 
+                            ด้วยการบริหารจัดการองค์กรอย่างมีประสิทธิภาพ นำเสนอนวัตกรรมการดูแลสุขภาพเชิงป้องกัน 
+                            พร้อมขับเคลื่อน รพ.สต. ให้เป็นที่พึ่งพาที่เข้มแข็งของประชาชนในท้องถิ่น
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                            <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                                <div class="text-sky-300 font-heading font-semibold text-sm mb-1">
+                                    <i class="fa-solid fa-heart-pulse mr-2"></i>การบริการสุขภาพชุมชน
+                                </div>
+                                <p class="text-xs text-slate-400">เข้าถึงง่าย ป้องกันโรคเชิงรุก ดูแลสุขภาพปฐมภูมิอย่างครอบคลุม</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                                <div class="text-pink-300 font-heading font-semibold text-sm mb-1">
+                                    <i class="fa-solid fa-users-gear mr-2"></i>วิสัยทัศน์การบริหาร
+                                </div>
+                                <p class="text-xs text-slate-400">พัฒนาบุคลากร เชื่อมโยงเครือข่ายสุขภาพ และพัฒนาคุณภาพการบริการ</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visual Box / Roadmap -->
+                    <div class="lg:col-span-5">
+                        <div class="p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 space-y-4">
+                            <h3 class="font-heading font-semibold text-base text-white border-b border-white/10 pb-3 flex items-center justify-between">
+                                <span>เส้นทางสู่ความสำเร็จ</span>
+                                <i class="fa-solid fa-route text-sky-400"></i>
+                            </h3>
+
+                            <div class="space-y-4 text-xs sm:text-sm">
+                                <div class="flex gap-3 items-start">
+                                    <div class="w-6 h-6 rounded-full bg-pink-500 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</div>
+                                    <div>
+                                        <h4 class="font-medium text-white">การศึกษาวิชาการด้านสาธารณสุข/การแพทย์</h4>
+                                        <p class="text-slate-400 text-xs">สะสมความรู้พื้นฐานทางการแพทย์ สุขภาพชุมชน และการบริหารงานสาธารณสุข</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-3 items-start">
+                                    <div class="w-6 h-6 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</div>
+                                    <div>
+                                        <h4 class="font-medium text-white">ประสบการณ์ภาคปฏิบัติ & ฝึกประสบการณ์</h4>
+                                        <p class="text-slate-400 text-xs">ลงพื้นที่ปฏิบัติงานจริง เรียนรู้ระบบงานใน รพ.สต. และเครือข่ายสุขภาพ</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-3 items-start">
+                                    <div class="w-6 h-6 rounded-full bg-sky-500 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</div>
+                                    <div>
+                                        <h4 class="font-medium text-white">ก้าวสู่ตำแหน่งบริหาร รพ.สต.</h4>
+                                        <p class="text-slate-400 text-xs">บริหารองค์กร สร้างนวัตกรรมการดูแลสุขภาพ เพื่อสุขภาพที่ดีของประชาชน</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="hobbies" class="py-16 bg-slate-50/70 border-t border-slate-200/60">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-heading font-semibold uppercase tracking-wider text-amber-500">Life Style & Preferences</span>
+                <h2 class="text-2xl sm:text-3xl font-heading font-bold text-slate-800 mt-1">กิจกรรมที่ชอบ & สีที่หลงรัก</h2>
+                <div class="w-12 h-1 bg-gradient-to-r from-amber-400 to-pink-400 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Hobbies Card -->
+                <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-heading font-bold text-slate-800">กิจกรรมที่ชอบ (Hobbies)</h3>
+                            <p class="text-xs text-slate-500">กิจกรรมยามว่างสำหรับการผ่อนคลายและสร้างแรงบันดาลใจ</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 rounded-2xl bg-pink-50/50 border border-pink-100 hover:bg-pink-50 transition-colors text-center group">
+                            <div class="w-12 h-12 mx-auto rounded-full bg-pink-200/60 text-pink-600 flex items-center justify-center text-xl mb-2 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-film"></i>
+                            </div>
+                            <h4 class="font-heading font-semibold text-slate-800 text-sm">ดูหนัง (Movies)</h4>
+                            <p class="text-xs text-slate-500 mt-1">เปิดมุมมอง ความคิด และผ่อนคลายความเครียด</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-sky-50/50 border border-sky-100 hover:bg-sky-50 transition-colors text-center group">
+                            <div class="w-12 h-12 mx-auto rounded-full bg-sky-200/60 text-sky-600 flex items-center justify-center text-xl mb-2 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-music"></i>
+                            </div>
+                            <h4 class="font-heading font-semibold text-slate-800 text-sm">ฟังเพลง (Music)</h4>
+                            <p class="text-xs text-slate-500 mt-1">เพิ่มสมาธิ สร้างพลังบวกและความผ่อนคลาย</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Favorite Colors Showcase Card -->
+                <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-heading font-bold text-slate-800">สีที่ชอบ (Favorite Colors)</h3>
+                            <p class="text-xs text-slate-500">โทนสีสะท้อนตัวตน บุคลิกภาพ ความอบอุ่นและความสดใส</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="p-3.5 rounded-2xl bg-pink-100/60 border border-pink-200 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-pink-400 shadow-sm"></div>
+                                <div>
+                                    <span class="font-heading font-semibold text-slate-800 text-sm block">สีชมพู (Pink)</span>
+                                    <span class="text-xs text-slate-500">ความอ่อนโยน จิตบริการ และความเอาใจใส่</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-mono text-pink-600 bg-white px-2 py-0.5 rounded-md border border-pink-200">#EC4899</span>
+                        </div>
+
+                        <div class="p-3.5 rounded-2xl bg-amber-100/60 border border-amber-200 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-amber-400 shadow-sm"></div>
+                                <div>
+                                    <span class="font-heading font-semibold text-slate-800 text-sm block">สีเหลือง (Yellow)</span>
+                                    <span class="text-xs text-slate-500">ความสดใส พลังแห่งความคิดสร้างสรรค์ และมิตรภาพ</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-mono text-amber-600 bg-white px-2 py-0.5 rounded-md border border-amber-200">#EAB308</span>
+                        </div>
+
+                        <div class="p-3.5 rounded-2xl bg-sky-100/60 border border-sky-200 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-sky-400 shadow-sm"></div>
+                                <div>
+                                    <span class="font-heading font-semibold text-slate-800 text-sm block">สีฟ้า (Light Blue)</span>
+                                    <span class="text-xs text-slate-500">ความสงบ สุขุม ความน่าเชื่อถือ และความสุขอนามัย</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-mono text-sky-600 bg-white px-2 py-0.5 rounded-md border border-sky-200">#0284C7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-xs font-heading font-semibold uppercase tracking-wider text-pink-500">Activities & Achievements</span>
+                    <h2 class="text-2xl sm:text-3xl font-heading font-bold text-slate-800 mt-1">ผลงานและกิจกรรมประทับใจ</h2>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-500 mt-2 md:mt-0 max-w-xs">
+                    พื้นที่รวบรวมกิจกรรมการเรียนรู้ จิตอาสา และผลงานการทำประโยชน์เพื่อส่วนรวม
+                </p>
+            </div>
+
+            <!-- Portfolio Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Project Item 1 -->
+                <div class="group bg-slate-50 rounded-2xl border border-slate-200/80 overflow-hidden hover:shadow-lg transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-tr from-pink-200 via-sky-100 to-amber-100 flex items-center justify-center relative">
+                        <i class="fa-solid fa-hand-holding-medical text-4xl text-pink-400 group-hover:scale-110 transition-transform"></i>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 bg-white/90 backdrop-blur-md rounded-full text-xs font-heading font-medium text-pink-600">จิตอาสา</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-heading font-bold text-slate-800 text-base mb-1 group-hover:text-pink-600 transition-colors">
+                            กิจกรรมส่งเสริมสุขภาพในชุมชน
+                        </h3>
+                        <p class="text-xs text-slate-500 leading-relaxed mb-4">
+                            เข้าร่วมกิจกรรมจิตอาสารณรงค์ดูแลสุขภาพและให้ความรู้เรื่องสุขอนามัยเบื้องต้นแก่ผู้สูงอายุในท้องถิ่น
+                        </p>
+                        <div class="flex items-center justify-between text-xs text-slate-400 pt-3 border-t border-slate-200/60">
+                            <span><i class="fa-regular fa-calendar mr-1"></i> กิจกรรมวิชาการ</span>
+                            <span class="text-pink-500 font-medium">ดูรายละเอียด</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Item 2 -->
+                <div class="group bg-slate-50 rounded-2xl border border-slate-200/80 overflow-hidden hover:shadow-lg transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-tr from-sky-200 via-pink-100 to-amber-100 flex items-center justify-center relative">
+                        <i class="fa-solid fa-award text-4xl text-sky-500 group-hover:scale-110 transition-transform"></i>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 bg-white/90 backdrop-blur-md rounded-full text-xs font-heading font-medium text-sky-600">เกียรติบัตร</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-heading font-bold text-slate-800 text-base mb-1 group-hover:text-sky-600 transition-colors">
+                            การแข่งขันทักษะวิชาการ
+                        </h3>
+                        <p class="text-xs text-slate-500 leading-relaxed mb-4">
+                            ได้รับรางวัลและการเข้าร่วมการทดสอบความรู้ทางวิทยาศาสตร์สุขภาพระดับโรงเรียนและระดับเขต
+                        </p>
+                        <div class="flex items-center justify-between text-xs text-slate-400 pt-3 border-t border-slate-200/60">
+                            <span><i class="fa-regular fa-calendar mr-1"></i> รางวัลและเกียรติประวัติ</span>
+                            <span class="text-sky-500 font-medium">ดูรายละเอียด</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Item 3 -->
+                <div class="group bg-slate-50 rounded-2xl border border-slate-200/80 overflow-hidden hover:shadow-lg transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-tr from-amber-200 via-pink-100 to-sky-100 flex items-center justify-center relative">
+                        <i class="fa-solid fa-users text-4xl text-amber-500 group-hover:scale-110 transition-transform"></i>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 bg-white/90 backdrop-blur-md rounded-full text-xs font-heading font-medium text-amber-600">กิจกรรมโรงเรียน</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-heading font-bold text-slate-800 text-base mb-1 group-hover:text-amber-600 transition-colors">
+                            ผู้นำสภานักเรียน / สโมสรเยาวชน
+                        </h3>
+                        <p class="text-xs text-slate-500 leading-relaxed mb-4">
+                            ร่วมวางแผนและจัดกิจกรรมส่งเสริมสุขภาวะในสถานศึกษา ฝึกทักษะการเป็นผู้นำและการทำงานเป็นทีม
+                        </p>
+                        <div class="flex items-center justify-between text-xs text-slate-400 pt-3 border-t border-slate-200/60">
+                            <span><i class="fa-regular fa-calendar mr-1"></i> ทักษะการบริหาร</span>
+                            <span class="text-amber-500 font-medium">ดูรายละเอียด</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-slate-900 text-white relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-xs font-heading font-semibold uppercase tracking-wider text-pink-400">Get In Touch</span>
+                    <h2 class="text-3xl sm:text-4xl font-heading font-bold text-white">
+                        ช่องทางการติดต่อ <br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-sky-300">
+                            Chadaporn Nantasai
+                        </span>
+                    </h2>
+                    <p class="text-slate-400 text-sm leading-relaxed font-light">
+                        หากต้องการสอบถามข้อมูลเพิ่มเติม แลกเปลี่ยนความคิดเห็น หรือติดต่อประสานงานวิชาการ สามารถติดต่อได้ตามช่องทางด้านล่างนี้ค่ะ
+                    </p>
+
+                    <!-- Contact List -->
+                    <div class="space-y-4 pt-2">
+                        <!-- Facebook -->
+                        <a href="https://facebook.com" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-pink-500/50 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center text-xl shrink-0 group-hover:scale-105 transition-transform">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 font-heading block">Facebook</span>
+                                <span class="font-heading font-semibold text-white text-base">Chadaporn Nantasai</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 ml-auto group-hover:text-pink-400"></i>
+                        </a>
+
+                        <!-- Instagram -->
+                        <a href="https://instagram.com" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-pink-500/50 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 text-white flex items-center justify-center text-xl shrink-0 group-hover:scale-105 transition-transform">
+                                <i class="fa-brands fa-instagram"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 font-heading block">Instagram</span>
+                                <span class="font-heading font-semibold text-white text-base">chadapxrn_07</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 ml-auto group-hover:text-pink-400"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form Mockup -->
+                <div class="lg:col-span-6">
+                    <div class="bg-white/5 backdrop-blur-lg p-6 sm:p-8 rounded-3xl border border-white/10">
+                        <h3 class="text-lg font-heading font-bold text-white mb-4">ฝากข้อความติดต่อ</h3>
+                        <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-heading text-slate-300 mb-1">ชื่อผู้ติดต่อ</label>
+                                <input type="text" required placeholder="กรอกชื่อของคุณ" class="w-full px-4 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm focus:outline-none focus:border-pink-400 transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-heading text-slate-300 mb-1">อีเมล / เบอร์โทรศัพท์</label>
+                                <input type="text" required placeholder="example@email.com หรือ 08X-XXX-XXXX" class="w-full px-4 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm focus:outline-none focus:border-pink-400 transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-heading text-slate-300 mb-1">ข้อความ</label>
+                                <textarea rows="3" required placeholder="พิมพ์ข้อความที่คุณต้องการติดต่อ..." class="w-full px-4 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm focus:outline-none focus:border-pink-400 transition-colors"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-pink-500 to-sky-500 text-white font-heading font-semibold text-sm hover:opacity-90 transition-opacity shadow-lg">
+                                ส่งข้อความ
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 bg-slate-950 text-slate-500 text-xs border-t border-slate-800/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                © 2026 Chadaporn Nantasai. All rights reserved. (Academic Portfolio)
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="#hero" class="hover:text-white transition-colors">กลับขึ้นด้านบน <i class="fa-solid fa-arrow-up ml-1"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="githubModal" class="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeGithubModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600 transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center text-xl">
+                    <i class="fa-brands fa-github"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-heading font-bold text-slate-800">ขั้นตอนการนำเว็บนี้ขึ้น GitHub Pages</h3>
+                    <p class="text-xs text-slate-500">เผยแพร่เว็บไซต์ประวัติส่วนตัวของคุณให้เข้าถึงได้ทั่วโลกฟรี!</p>
+                </div>
+            </div>
+
+            <div class="space-y-4 text-xs sm:text-sm text-slate-600">
+                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1">
+                    <span class="font-heading font-semibold text-slate-800 text-sm text-pink-600">ขั้นตอนที่ 1: เตรียมไฟล์</span>
+                    <p>บันทึกโค้ดนี้ไว้ในชื่อไฟล์ <code class="bg-slate-200 px-1.5 py-0.5 rounded font-mono text-slate-800">index.html</code> ลงในคอมพิวเตอร์ของคุณ</p>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1">
+                    <span class="font-heading font-semibold text-slate-800 text-sm text-sky-600">ขั้นตอนที่ 2: สร้าง Repository บน GitHub</span>
+                    <p>1. สมัคร/ล็อกอินบัญชี <a href="https://github.com" target="_blank" class="text-sky-600 underline">GitHub.com</a></p>
+                    <p>2. คลิกปุ่ม <strong>New Repository</strong> ตั้งชื่อ เช่น <code class="bg-slate-200 px-1.5 py-0.5 rounded font-mono text-slate-800">my-portfolio</code> แล้วกด Create Repository</p>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1">
+                    <span class="font-heading font-semibold text-slate-800 text-sm text-amber-600">ขั้นตอนที่ 3: อัปโหลดไฟล์ index.html</span>
+                    <p>ในหน้า Repository คลิก <strong>uploading an existing file</strong> แล้วลากไฟล์ <code class="bg-slate-200 px-1.5 py-0.5 rounded font-mono text-slate-800">index.html</code> ใส่ลงไป จากนั้นกด <strong>Commit changes</strong></p>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1">
+                    <span class="font-heading font-semibold text-slate-800 text-sm text-emerald-600">ขั้นตอนที่ 4: เปิดใช้งาน GitHub Pages</span>
+                    <p>1. ไปที่เมนู <strong>Settings</strong> > <strong>Pages</strong></p>
+                    <p>2. ในหัวข้อ Build and deployment ให้เลือก Branch เป็น <code class="bg-slate-200 px-1.5 py-0.5 rounded font-mono text-slate-800">main</code> (หรือ master) แล้วกด <strong>Save</strong></p>
+                    <p>3. รอ 1-2 นาที คุณจะได้ลิงก์เว็บไซต์ เช่น <code class="bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-mono">https://yourusername.github.io/my-portfolio</code> พร้อมส่งให้อาจารย์หรือใส่ในแฟ้มสะสมผลงานได้ทันที!</p>
+                </div>
+            </div>
+
+            <div class="pt-2 text-center">
+                <button onclick="closeGithubModal()" class="px-6 py-2.5 rounded-full bg-slate-900 text-white font-heading font-medium text-xs hover:bg-slate-800 transition-colors">
+                    เข้าใจแล้ว ปิดหน้าต่างนี้
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openGithubModal() {
+            document.getElementById('githubModal').classList.remove('hidden');
+        }
+
+        function closeGithubModal() {
+            document.getElementById('githubModal').classList.add('hidden');
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            alert("ขอบคุณสำหรับข้อความค่ะ! ระบบจำลองบันทึกข้อความเรียบร้อยแล้ว");
+            e.target.reset();
+        }
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            const modal = document.getElementById('githubModal');
+            if (event.target === modal) {
+                closeGithubModal();
+            }
+        }
+    </script>
+</body>
+</html>
